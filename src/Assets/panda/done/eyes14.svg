@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1 (ce6663b3b7, 2021-05-25)"
-   sodipodi:docname="eyes13.svg"
+   sodipodi:docname="eyes14.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="0.6499793"
-     inkscape:cx="587.71103"
-     inkscape:cy="1105.4198"
+     inkscape:zoom="0.45960477"
+     inkscape:cx="504.78153"
+     inkscape:cy="429.71704"
      inkscape:window-width="1528"
      inkscape:window-height="836"
      inkscape:window-x="72"
@@ -140,20 +140,19 @@
        d="m 163.1971,153.13443 c 0,16.3488 12.36118,29.60213 27.6095,29.60213 15.24838,0 24.37357,-12.10291 24.37357,-28.45171 1e-5,-9.95217 -7.59326,-17.00732 -12.08364,-21.16564 -15.07127,-13.95677 -22.09182,-12.9129 -22.09182,-12.9129 -15.24829,0 -17.80761,16.57932 -17.80761,32.92812 z"
        sodipodi:nodetypes="ssssss" />
     <ellipse
-       style="fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path37397"
-       cx="101.8633"
-       cy="149.37405"
-       rx="21.241289"
-       ry="3.7603807" />
+       style="fill:#f9f9f9;stroke-width:0;stroke-linecap:round;stroke-linejoin:round"
+       id="path1236"
+       cx="106.50997"
+       cy="137.54855"
+       rx="15.579803"
+       ry="14.646985" />
     <ellipse
-       style="fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="ellipse37503"
-       cx="-184.41251"
-       cy="149.37405"
-       rx="21.241289"
-       ry="3.7603807"
-       transform="scale(-1,1)" />
+       style="fill:#f9f9f9;stroke-width:0;stroke-linecap:round;stroke-linejoin:round"
+       id="ellipse1320"
+       cx="186.23123"
+       cy="166.72157"
+       rx="15.579803"
+       ry="14.646985" />
   </g>
   <g
      inkscape:groupmode="layer"

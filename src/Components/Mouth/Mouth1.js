@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ColorContext } from '../../Context/ColorContext';
 
-function Mouth() {
+function Mouth1() {
+  const { pallete } = useContext(ColorContext);
   return (
     <>
       <ellipse
         style={{
-          fill: '#f4f4f4',
+          fill: pallete[3],
           fillOpacity: 1,
           stroke: '#2e2633',
           strokeWidth: 0,
@@ -70,4 +72,4 @@ function Mouth() {
   );
 }
 
-export default Mouth;
+export default Mouth1;

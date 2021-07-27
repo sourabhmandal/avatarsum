@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ColorContext } from '../../Context/ColorContext';
 
-function Face() {
+function Face1() {
+  const { pallete } = useContext(ColorContext);
   return (
     <>
       <g
         id='g5965'
         transform='matrix(1.0386788,0,0,0.94807566,-5.2523734,2.2909626)'
         style={{
-          fill: '#b8cbd1',
+          fill: pallete[0],
           fillOpacity: 1,
-          stroke: '#2f2633',
+          stroke: pallete[0],
           strokeOpacity: 0,
           strokeWidth: 0,
           strokeMiterlimit: 4,
@@ -20,9 +22,9 @@ function Face() {
         <path
           id='path5963'
           style={{
-            fill: '#b8cbd1',
+            fill: pallete[0],
             fillOpacity: 1,
-            stroke: '#2f2633',
+            stroke: pallete[0],
             strokeWidth: 0,
             strokeMiterlimit: 4,
             strokeDasharray: 'none',
@@ -34,8 +36,8 @@ function Face() {
       <path
         id='path13746'
         style={{
-          fill: '#e9f1f4',
-          stroke: '#2e2633',
+          fill: pallete[1],
+          stroke: pallete[1],
           strokeWidth: 0,
           strokeLinecap: 'round',
           strokeLinejoin: 'bevel',
@@ -49,4 +51,4 @@ function Face() {
   );
 }
 
-export default Face;
+export default Face1;

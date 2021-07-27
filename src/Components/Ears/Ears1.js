@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ColorContext } from '../../Context/ColorContext';
 
-function Ears() {
+function Ears1() {
+  const { pallete } = useContext(ColorContext);
   return (
     <>
       <path
         id='path16362'
         style={{
-          fill: '#50565b',
-          stroke: '#2e2633',
+          fill: pallete[2],
+          stroke: pallete[2],
           strokeWidth: 0,
           strokeLinecap: 'round',
           strokeLinejoin: 'bevel',
@@ -21,8 +23,8 @@ function Ears() {
       <path
         id='path17933'
         style={{
-          fill: '#50565b',
-          stroke: '#2e2633',
+          fill: pallete[2],
+          stroke: pallete[2],
           strokeWidth: 0,
           strokeLinecap: 'round',
           strokeLinejoin: 'bevel',
@@ -37,4 +39,4 @@ function Ears() {
   );
 }
 
-export default Ears;
+export default Ears1;
