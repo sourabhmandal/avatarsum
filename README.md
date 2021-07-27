@@ -2,7 +2,7 @@
 
 This project was create for **Clerk hackathon** running in **Hashnode**.
 
-![alt text](http://www.github.com/sourabhmandal/avatrasum/v1_avatarsum.png)
+![alt text](https://github.com/sourabhmandal/avatarsum/blob/main/readme_resources/v1_avatarsum.gif)
 
 # Run this project Locally
 
