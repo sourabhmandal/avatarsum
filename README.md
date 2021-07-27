@@ -2,6 +2,8 @@
 
 This project was create for **Clerk hackathon** running in **Hashnode**.
 
+![alt text](http://www.github.com/sourabhmandal/avatrasum/v1_avatarsum.png)
+
 # Run this project Locally
 
 To run this project follow the following steps
