@@ -13,7 +13,7 @@ function ColorProvider(props) {
   };
 
   return (
-    <ColorContext.Provider value={{ pallete, SetPallete }}>
+    <ColorContext.Provider value={{ pallete, SetPallete, setPallete }}>
       {props.children}
     </ColorContext.Provider>
   );
