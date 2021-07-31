@@ -37,10 +37,7 @@ function Navbar({ tabIndex, settabIndex }) {
   return (
     <>
       <div className='flex align-center justify-between mb-10 px-10 py-1 bg-blue-50 border-b'>
-        <a
-          href='https://avatarsum.netlify.app/'
-          className='my-auto font-bold text-3xl text-purple-600'
-        >
+        <a href='/' className='my-auto font-bold text-3xl text-purple-600'>
           AvatarSum
         </a>
         <div className='py-2'>
@@ -109,7 +106,7 @@ function Navbar({ tabIndex, settabIndex }) {
           <SignedIn>
             <button
               onClick={() => {
-                window.location = `https://avatarsum.netlify.app/collection/${user.data.id}`;
+                window.location = `/collection/${user.data.id}`;
               }}
               className=' ml-2 my-auto font-bold rounded-full text-xs bg-gray-100 uppercase border-2 border-indigo-400'
             >
@@ -134,9 +131,7 @@ function Navbar({ tabIndex, settabIndex }) {
         </SignedIn>
         <SignedOut>
           <button
-            onClick={() =>
-              (window.location = 'https://avatarsum.netlify.app/accounts')
-            }
+            onClick={() => (window.location = '/accounts')}
             className='my-auto font-bold rounded-full text-xs bg-gray-100 uppercase border-2 border-indigo-400'
           >
             <p className='px-3 py-2'>Login</p>

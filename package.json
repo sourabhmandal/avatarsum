@@ -2,6 +2,7 @@
   "name": "avatarsum",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://avatarsum.netlify.app/",
   "dependencies": {
     "@clerk/clerk-react": "^1.15.0",
     "@craco/craco": "^6.2.0",
