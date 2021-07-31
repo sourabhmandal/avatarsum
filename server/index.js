@@ -26,7 +26,7 @@ mongoose
   })
   .then(() => {
     console.log('MONGODB CONNECTED');
-    app.listen(port, () => {
+    app.listen(process.env['PORT'] || port, () => {
       console.log(`AVATARSUM BACKEND listening at http://localhost:${port}`);
     });
   })
