@@ -202,7 +202,7 @@ function Avatar({ width, height, bg, ear, eye, face, otl, mouth }) {
             onClick={() => {
               handleAvatarSave();
             }}
-            className='hover:bg-gray-400 my-1 mx-auto w-40 text-center py-1 border-4 font-bold duration-100 border-gray-400 hover:border-gray-100 rounded-full hover:text-gray-100 text-gray-400'
+            className='hover:bg-gray-400 active:bg-green-500 my-1 mx-auto w-40 text-center py-1 border-4 font-bold duration-100 border-gray-400 hover:border-gray-100 rounded-full hover:text-gray-100 text-gray-400'
           >
             Add to collection
           </button>
@@ -214,7 +214,7 @@ function Avatar({ width, height, bg, ear, eye, face, otl, mouth }) {
             Download svg
           </button>
           <CopyToClipboard text={copyValue}>
-            <button className='hover:bg-gray-400 my-1 mx-auto w-40 text-center py-1 border-4 font-bold duration-100 border-gray-400 hover:border-gray-100 rounded-full hover:text-gray-100 text-gray-400'>
+            <button className='hover:bg-gray-400 active:bg-yellow-500 my-1 mx-auto w-40 text-center py-1 border-4 font-bold duration-100 border-gray-400 hover:border-gray-100 rounded-full hover:text-gray-100 text-gray-400'>
               Copy svg
             </button>
           </CopyToClipboard>
