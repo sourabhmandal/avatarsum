@@ -12,8 +12,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-app.use('api/pallete/', PalleteRouter);
-app.use('api/panda/', PandaRouter);
+app.use('/pallete/', PalleteRouter);
+app.use('/panda/', PandaRouter);
 
 app.get('/', (req, res) => {
   res.send('Avatarsum running');

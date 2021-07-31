@@ -125,7 +125,7 @@ function Avatar({ width, height, bg, ear, eye, face, otl, mouth }) {
     };
 
     fetch(
-      `https://avatarsum.herokuapp.com/api/panda/${user.data.id}`,
+      `${process.env['REACT_APP_AVATAR_BACKEND_API']}/panda/${user.data.id}`,
       requestOptions
     )
       .then((result) => console.log(result))

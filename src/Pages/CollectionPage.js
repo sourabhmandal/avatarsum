@@ -17,7 +17,7 @@ function CollectionPage() {
     };
     if (user) {
       fetch(
-        `https://avatarsum.herokuapp.com/api/panda/${user.data.id}`,
+        `${process.env['REACT_APP_AVATAR_BACKEND_API']}/panda/${user.data.id}`,
         requestOptions
       )
         .then((resp) => resp.text())
@@ -30,7 +30,7 @@ function CollectionPage() {
 
     if (user) {
       fetch(
-        `https://avatarsum.herokuapp.com/api/pallete/${user.data.id}`,
+        `${process.env['REACT_APP_AVATAR_BACKEND_API']}/pallete/${user.data.id}`,
         requestOptions
       )
         .then((resp) => resp.text())
@@ -50,14 +50,18 @@ function CollectionPage() {
       redirect: 'follow',
     };
     if (user) {
-      fetch(`https://avatarsum.herokuapp.com/api/panda/${id}`, requestOptions)
+      fetch(
+        `${process.env['REACT_APP_AVATAR_BACKEND_API']}/panda/${id}`,
+        requestOptions
+      )
         .then((resp) => resp.text())
         .then((result) => {
-          console.log(result);
-          setPandas((prev) => {
-            prev = prev.filter((el) => el._id !== id);
-            return prev;
-          });
+          if (result) {
+            setPandas((prev) => {
+              prev = prev.filter((el) => el._id !== id);
+              return prev;
+            });
+          }
         })
         .catch((error) => console.log('error', error));
     }
@@ -68,13 +72,18 @@ function CollectionPage() {
       redirect: 'follow',
     };
     if (user) {
-      fetch(`https://avatarsum.herokuapp.com/api/pallete/${id}`, requestOptions)
+      fetch(
+        `${process.env['REACT_APP_AVATAR_BACKEND_API']}/pallete/${id}`,
+        requestOptions
+      )
         .then((resp) => resp.text())
         .then((result) => {
-          setallpallete((prev) => {
-            prev = prev.filter((el) => el._id !== id);
-            return prev;
-          });
+          if (result) {
+            setallpallete((prev) => {
+              prev = prev.filter((el) => el._id !== id);
+              return prev;
+            });
+          }
         })
         .catch((error) => console.log('error', error));
     }
@@ -87,85 +96,96 @@ function CollectionPage() {
           <h1 className='text-3xl m-4 font-bold text-purple-500'>
             Saved Palletes
           </h1>
-          <div className='grid sm:grid-cols-1 mx-32 md:mx-0 md:grid-cols-2 xl:grid-cols-3 gap-5 '>
-            {allpallete.map((el, idx) => {
-              const { pallete } = el;
-              return (
-                <div className='flex' key={idx}>
-                  <div className='mr-5 my-auto flex'>
-                    <p
-                      className='w-8 h-8 mr-1'
-                      style={{ backgroundColor: pallete[0] }}
-                    ></p>
-                    <p
-                      className='w-8 h-8 mr-1'
-                      style={{ backgroundColor: pallete[1] }}
-                    ></p>
-                    <p
-                      className='w-8 h-8 mr-1'
-                      style={{ backgroundColor: pallete[2] }}
-                    ></p>
-                    <p
-                      className='w-8 h-8 mr-1'
-                      style={{ backgroundColor: pallete[3] }}
-                    ></p>
-                    <p
-                      className='w-8 h-8 mr-1'
-                      style={{ backgroundColor: pallete[4] }}
-                    ></p>
+          {allpallete.length !== 0 ? (
+            <div className='grid sm:grid-cols-1 mx-32 md:mx-0 md:grid-cols-2 xl:grid-cols-3 gap-5 '>
+              {allpallete.map((el, idx) => {
+                const { pallete } = el;
+                return (
+                  <div className='flex' key={idx}>
+                    <div className='mr-5 my-auto flex'>
+                      <p
+                        className='w-8 h-8 mr-1'
+                        style={{ backgroundColor: pallete[0] }}
+                      ></p>
+                      <p
+                        className='w-8 h-8 mr-1'
+                        style={{ backgroundColor: pallete[1] }}
+                      ></p>
+                      <p
+                        className='w-8 h-8 mr-1'
+                        style={{ backgroundColor: pallete[2] }}
+                      ></p>
+                      <p
+                        className='w-8 h-8 mr-1'
+                        style={{ backgroundColor: pallete[3] }}
+                      ></p>
+                      <p
+                        className='w-8 h-8 mr-1'
+                        style={{ backgroundColor: pallete[4] }}
+                      ></p>
+                    </div>
+                    <button
+                      onClick={() => setPallete(pallete)}
+                      className='px-4 py-2 my-auto font-bold rounded-full text-xs bg-gray-100 uppercase border-2 border-indigo-400'
+                    >
+                      use
+                    </button>
+                    <button
+                      onClick={() => handlePalleteDelete(el._id)}
+                      className='px-4 ml-2 py-2 my-auto font-bold rounded-full text-xs bg-gray-100 uppercase border-2 border-indigo-400'
+                    >
+                      delete
+                    </button>
                   </div>
-                  <button
-                    onClick={() => setPallete(pallete)}
-                    className='px-4 py-2 my-auto font-bold rounded-full text-xs bg-gray-100 uppercase border-2 border-indigo-400'
-                  >
-                    use
-                  </button>
-                  <button
-                    onClick={() => handlePalleteDelete(el._id)}
-                    className='px-4 ml-2 py-2 my-auto font-bold rounded-full text-xs bg-gray-100 uppercase border-2 border-indigo-400'
-                  >
-                    delete
-                  </button>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className='w-full h-96 flex justify-center items-center bg-gray-50 text-2xl text-gray-400'>
+              No Pallete saved
+            </div>
+          )}
 
           <h1 className='text-3xl m-4 font-bold text-purple-500'>
             Saved Pandas
           </h1>
+          {pandas.length !== 0 ? (
+            <div className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 '>
+              {pandas.map((el, idx) => {
+                const { panda } = el;
 
-          <div className='grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 '>
-            {pandas.map((el, idx) => {
-              const { panda } = el;
-
-              return (
-                <div
-                  className='rounded-lg border justify-center mx-auto text-center relative'
-                  key={`${panda.ear}-${panda.bg}-${panda.eye}-${panda.face}-${panda.otl}-${panda.mouth}`}
-                >
-                  <div className='relative'>
-                    <Avatar
-                      width={260}
-                      height={260}
-                      bg={panda.bg}
-                      ear={panda.ear}
-                      eye={panda.eye}
-                      face={panda.face}
-                      otl={panda.otl}
-                      mouth={panda.mouth}
-                    />
-                  </div>
-                  <button
-                    onClick={() => handlePandaDelete(el._id)}
-                    className='px-10 py-2 my-2 font-bold rounded-full text-xs bg-gray-100 uppercase border-2 border-red-400'
+                return (
+                  <div
+                    className='rounded-lg border justify-center mx-auto text-center relative'
+                    key={`${panda.ear}-${panda.bg}-${panda.eye}-${panda.face}-${panda.otl}-${panda.mouth}`}
                   >
-                    delete
-                  </button>
-                </div>
-              );
-            })}
-          </div>
+                    <div className='relative'>
+                      <Avatar
+                        width={260}
+                        height={260}
+                        bg={panda.bg}
+                        ear={panda.ear}
+                        eye={panda.eye}
+                        face={panda.face}
+                        otl={panda.otl}
+                        mouth={panda.mouth}
+                      />
+                    </div>
+                    <button
+                      onClick={() => handlePandaDelete(el._id)}
+                      className='px-10 py-2 my-2 font-bold rounded-full text-xs bg-gray-100 uppercase border-2 border-red-400'
+                    >
+                      delete
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className='w-full h-96 flex justify-center items-center bg-gray-50 text-2xl text-gray-400'>
+              No Pandas saved
+            </div>
+          )}
         </div>
       </SignedIn>
       <SignedOut>
