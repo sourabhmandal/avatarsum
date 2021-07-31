@@ -3,14 +3,14 @@ module.exports = function (app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://avatarsum.herokuapp.com/',
+      target: 'https://www.avatarsum.herokuapp.com/',
       changeOrigin: true,
     })
   );
   app.use(
     '/accounts',
     createProxyMiddleware({
-      target: process.env['REACT_APP_CLERK_FRONTEND_API'],
+      target: 'https://www.clerk.y4uyk.3i8xs.lcl.dev/',
       changeOrigin: true,
     })
   );
