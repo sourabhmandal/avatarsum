@@ -7,11 +7,4 @@ module.exports = function (app) {
       changeOrigin: true,
     })
   );
-  app.use(
-    '/accounts',
-    createProxyMiddleware({
-      target: 'https://www.clerk.y4uyk.3i8xs.lcl.dev/',
-      changeOrigin: true,
-    })
-  );
 };
