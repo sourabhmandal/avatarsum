@@ -37,7 +37,10 @@ function Navbar({ tabIndex, settabIndex }) {
   return (
     <>
       <div className='flex align-center justify-between mb-10 px-10 py-1 bg-blue-50 border-b'>
-        <a href='/' className='my-auto font-bold text-3xl text-purple-600'>
+        <a
+          href='https://avatarsum.netlify.app/'
+          className='my-auto font-bold text-3xl text-purple-600'
+        >
           AvatarSum
         </a>
         <div className='py-2'>
@@ -97,7 +100,7 @@ function Navbar({ tabIndex, settabIndex }) {
             <button
               onClick={() => {}}
               disabled={true}
-              className='ml-2 px-3 py-2 my-auto font-bold rounded-full text-xs bg-gray-200 uppercase border-2 border-gray-400'
+              className='ml-2 px-3 py-2 my-auto font-bold rounded-full text-gray-400 text-xs bg-gray-200 uppercase border-2 border-gray-400'
             >
               save
             </button>
@@ -106,7 +109,7 @@ function Navbar({ tabIndex, settabIndex }) {
           <SignedIn>
             <button
               onClick={() => {
-                window.location = `/collection/${user.data.id}`;
+                window.location = `https://avatarsum.netlify.app/collection/${user.data.id}`;
               }}
               className=' ml-2 my-auto font-bold rounded-full text-xs bg-gray-100 uppercase border-2 border-indigo-400'
             >
@@ -117,7 +120,7 @@ function Navbar({ tabIndex, settabIndex }) {
             <button
               disabled={true}
               onClick={() => {}}
-              className=' ml-2 my-auto font-bold rounded-full text-xs bg-gray-200 uppercase border-2 border-gray-400'
+              className=' ml-2 my-auto font-bold text-gray-400 rounded-full text-xs bg-gray-200 uppercase border-2 border-gray-400'
             >
               <p className='px-3 py-2'>Collection</p>
             </button>
@@ -131,7 +134,9 @@ function Navbar({ tabIndex, settabIndex }) {
         </SignedIn>
         <SignedOut>
           <button
-            onClick={() => (window.location = '/accounts')}
+            onClick={() =>
+              (window.location = 'https://avatarsum.netlify.app/accounts')
+            }
             className='my-auto font-bold rounded-full text-xs bg-gray-100 uppercase border-2 border-indigo-400'
           >
             <p className='px-3 py-2'>Login</p>
