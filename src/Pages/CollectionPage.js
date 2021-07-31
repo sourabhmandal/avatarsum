@@ -16,7 +16,7 @@ function CollectionPage() {
       redirect: 'follow',
     };
     if (user) {
-      fetch(`http://localhost:4000/panda/${user.data.id}`, requestOptions)
+      fetch(`api/panda/${user.data.id}`, requestOptions)
         .then((resp) => resp.text())
         .then((result) => {
           result = JSON.parse(result);
@@ -26,7 +26,7 @@ function CollectionPage() {
     }
 
     if (user) {
-      fetch(`http://localhost:4000/pallete/${user.data.id}`, requestOptions)
+      fetch(`api/pallete/${user.data.id}`, requestOptions)
         .then((resp) => resp.text())
         .then((result) => {
           result = JSON.parse(result);
@@ -44,7 +44,7 @@ function CollectionPage() {
       redirect: 'follow',
     };
     if (user) {
-      fetch(`http://localhost:4000/panda/${id}`, requestOptions)
+      fetch(`api/panda/${id}`, requestOptions)
         .then((resp) => resp.text())
         .then((result) => {
           console.log(result);
@@ -62,7 +62,7 @@ function CollectionPage() {
       redirect: 'follow',
     };
     if (user) {
-      fetch(`http://localhost:4000/pallete/${id}`, requestOptions)
+      fetch(`api/pallete/${id}`, requestOptions)
         .then((resp) => resp.text())
         .then((result) => {
           setallpallete((prev) => {

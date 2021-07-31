@@ -24,7 +24,7 @@ function Navbar({ tabIndex, settabIndex }) {
       redirect: 'follow',
     };
 
-    fetch(`/pallete/${user.data.id}`, requestOptions)
+    fetch(`api/pallete/${user.data.id}`, requestOptions)
       .then((result) => console.log(result))
       .catch((error) => console.log('error', error));
   };
