@@ -16,7 +16,10 @@ function CollectionPage() {
       redirect: 'follow',
     };
     if (user) {
-      fetch(`api/panda/${user.data.id}`, requestOptions)
+      fetch(
+        `https://avatarsum.herokuapp.com/api/panda/${user.data.id}`,
+        requestOptions
+      )
         .then((resp) => resp.text())
         .then((result) => {
           result = JSON.parse(result);
@@ -26,7 +29,10 @@ function CollectionPage() {
     }
 
     if (user) {
-      fetch(`api/pallete/${user.data.id}`, requestOptions)
+      fetch(
+        `https://avatarsum.herokuapp.com/api/pallete/${user.data.id}`,
+        requestOptions
+      )
         .then((resp) => resp.text())
         .then((result) => {
           result = JSON.parse(result);
@@ -44,7 +50,7 @@ function CollectionPage() {
       redirect: 'follow',
     };
     if (user) {
-      fetch(`api/panda/${id}`, requestOptions)
+      fetch(`https://avatarsum.herokuapp.com/api/panda/${id}`, requestOptions)
         .then((resp) => resp.text())
         .then((result) => {
           console.log(result);
@@ -62,7 +68,7 @@ function CollectionPage() {
       redirect: 'follow',
     };
     if (user) {
-      fetch(`api/pallete/${id}`, requestOptions)
+      fetch(`https://avatarsum.herokuapp.com/api/pallete/${id}`, requestOptions)
         .then((resp) => resp.text())
         .then((result) => {
           setallpallete((prev) => {

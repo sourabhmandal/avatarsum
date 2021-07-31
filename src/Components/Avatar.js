@@ -124,7 +124,10 @@ function Avatar({ width, height, bg, ear, eye, face, otl, mouth }) {
       redirect: 'follow',
     };
 
-    fetch(`api/panda/${user.data.id}`, requestOptions)
+    fetch(
+      `https://avatarsum.herokuapp.com/api/panda/${user.data.id}`,
+      requestOptions
+    )
       .then((result) => console.log(result))
       .catch((error) => console.log('error', error));
   };

@@ -24,7 +24,10 @@ function Navbar({ tabIndex, settabIndex }) {
       redirect: 'follow',
     };
 
-    fetch(`api/pallete/${user.data.id}`, requestOptions)
+    fetch(
+      `https://avatarsum.herokuapp.com/api/pallete/${user.data.id}`,
+      requestOptions
+    )
       .then((result) => console.log(result))
       .catch((error) => console.log('error', error));
   };
